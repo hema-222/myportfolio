@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hema | Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --dark: #0f172a;
+            --text: #334155;
+            --muted: #64748b;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: "Poppins";
+            font-size: 25px;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 100px;
+
+            background:
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(37,99,235,.12),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 90% 10%,
+                    rgba(124,58,237,.12),
+                    transparent 30%
+                );
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 8px 15px;
+
+            border-radius: 30px;
+
+            color: var(--primary);
+
+            background: rgba(37,99,235,.1);
+
+            font-weight: 700;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: "Poppins";
+
+            font-size: clamp(3rem,7vw,5rem);
+
+            line-height: 1.1;
+
+            color: var(--dark);
+
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+
+            color: var(--text);
+
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 650px;
+
+            color: var(--muted);
+
+            font-size: 17px;
+
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 23px;
+
+            border-radius: 10px;
+
+            font-weight: 700;
+
+            transition: .3s;
+        }
+
+        .btn-primary {
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border);
+            background: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* ================= PROFILE PHOTO ================= */
+
+        .profile-area {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-circle {
+            width: 360px;
+            height: 360px;
+
+            border-radius: 50%;
+
+            padding: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+
+            box-shadow:
+                0 30px 70px rgba(37,99,235,.25);
+        }
+
+        .profile-circle img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 8px solid white;
+        }
+
+        /* ================= SOCIAL ICONS ================= */
+
+        .social-icons {
+            display: flex;
+
+            gap: 14px;
+
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            width: 48px;
+            height: 48px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 12px;
+
+            color: white;
+
+            font-size: 20px;
+
+            transition: .3s;
+        }
+
+        /* GitHub */
+
+        .github {
+            background: #181717;
+        }
+
+        /* LeetCode */
+
+        .leetcode {
+            background: #ffa116;
+        }
+
+        /* LinkedIn */
+
+        .linkedin {
+            background: #0a66c2;
+        }
+
+        /* CodeChef */
+
+        .codechef {
+            background: #5b4638;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,.2);
+        }
+
+        /* ================= SECTIONS ================= */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title small {
+            color: var(--primary);
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-family: "Poppins";
+
+            font-size: 40px;
+
+            color: var(--dark);
+
+            margin-top: 8px;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            max-width: 850px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .about p {
+            color: var(--muted);
+
+            font-size: 17px;
+
+            margin-bottom: 15px;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4,1fr);
+
+            gap: 20px;
+        }
+
+        .skill {
+            background: white;
+
+            padding: 30px;
+
+            text-align: center;
+
+            border-radius: 18px;
+
+            border: 1px solid var(--border);
+
+            transition: .3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 20px 40px rgba(0,0,0,.08);
+        }
+
+        .skill i {
+            font-size: 40px;
+
+            color: var(--primary);
+
+            margin-bottom: 15px;
+        }
+
+        .skill h3 {
+            color: var(--dark);
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .projects {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 25px;
+        }
+
+        .project {
+            background: white;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            border: 1px solid var(--border);
+
+            transition: .3s;
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 20px 40px rgba(0,0,0,.1);
+        }
+
+        .project-image {
+            height: 190px;
+
+            display: grid;
+            place-items: center;
+
+            color: white;
+
+            font-size: 55px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #7c3aed
+                );
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            color: var(--dark);
+
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: var(--muted);
+        }
+
+        /* ================= EDUCATION ================= */
+
+        .education {
+            max-width: 800px;
+
+            margin: auto;
+        }
+
+        .education-card {
+            background: white;
+
+            padding: 30px;
+
+            margin-bottom: 20px;
+
+            border-left:
+                5px solid var(--primary);
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,.07);
+        }
+
+        .education-card h3 {
+            color: var(--dark);
+        }
+
+        .education-card p {
+            color: var(--muted);
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 650px;
+
+            margin: auto;
+
+            padding: 40px;
+
+            background: white;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,.08);
+        }
+
+        .email {
+            color: var(--primary);
+
+            font-size: 18px;
+
+            font-weight: 700;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 30px;
+
+            text-align: center;
+
+            color: white;
+
+            background: var(--dark);
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons,
+            .social-icons {
+                justify-content: center;
+            }
+
+            .profile-circle {
+                width: 280px;
+                height: 280px;
+            }
+
+            .skills {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:500px) {
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="container nav-container">
+
+        <div class="logo">
+            Hema<span>.</span>
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="container hero-container">
+
+        <div>
+
+            <span class="badge">
+                Welcome to my portfolio
+            </span>
+
+            <h1>
+                Hi, I'm <span>Hema</span>
+            </h1>
+
+            <h2>
+                Student | Developer | Technology Enthusiast
+            </h2>
+
+            <p>
+                I am a passionate student interested in programming,
+                web development, databases, and emerging technologies.
+                I enjoy learning new skills and creating useful projects.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects"
+                   class="btn btn-primary">
+
+                    <i class="fa-solid fa-code"></i>
+
+                    View My Projects
+
+                </a>
+
+                <a href="#contact"
+                   class="btn btn-outline">
+
+                    Contact Me
+
+                </a>
+
+            </div>
+
+
+            <!-- ================= SOCIAL LINKS ================= -->
+
+            <div class="social-icons">
+
+
+                <!-- GitHub -->
+
+                <a href="https://github.com/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="github"
+                   title="GitHub">
+
+                    <i class="fa-brands fa-github"></i>
+
+                </a>
+
+
+                <!-- LeetCode -->
+
+                <a href="https://leetcode.com/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="leetcode"
+                   title="LeetCode">
+
+                    <i class="fa-solid fa-code"></i>
+
+                </a>
+
+
+                <!-- LinkedIn -->
+
+                <a href="https://www.linkedin.com/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="linkedin"
+                   title="LinkedIn">
+
+                    <i class="fa-brands fa-linkedin-in"></i>
+
+                </a>
+
+
+                <!-- CodeChef -->
+
+                <a href="https://www.codechef.com/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="codechef"
+                   title="CodeChef">
+
+                    <i class="fa-solid fa-utensils"></i>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= PROFILE PHOTO ================= -->
+
+        <div class="profile-area">
+
+            <div class="profile-circle">
+
+                <img
+                    src="hema.jpg"
+                    alt="Hema Profile Photo">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>About Me</small>
+
+            <h2>
+                About
+                <span style="color:#2563eb">
+                    Me
+                </span>
+            </h2>
+
+        </div>
+
+
+        <div class="about">
+
+            <p>
+                Hello! I'm Hema, a student who is passionate about
+                technology and software development.
+            </p>
+
+            <p>
+                I enjoy learning programming languages, creating
+                websites, solving problems, and working on practical
+                projects.
+            </p>
+
+            <p>
+                My goal is to continuously improve my technical skills
+                and become a successful software professional.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>My Skills</small>
+
+            <h2>
+                Technical Skills
+            </h2>
+
+        </div>
+
+
+        <div class="skills">
+
+
+            <div class="skill">
+
+                <i class="fa-brands fa-html5"></i>
+
+                <h3>
+                    HTML
+                </h3>
+
+            </div>
+
+
+            <div class="skill">
+
+                <i class="fa-brands fa-css3-alt"></i>
+
+                <h3>
+                    CSS
+                </h3>
+
+            </div>
+
+
+            <div class="skill">
+
+                <i class="fa-brands fa-js"></i>
+
+                <h3>
+                    JavaScript
+                </h3>
+
+            </div>
+
+
+            <div class="skill">
+
+                <i class="fa-brands fa-java"></i>
+
+                <h3>
+                    Java
+                </h3>
+
+            </div>
+
+
+            <div class="skill">
+
+                <i class="fa-solid fa-database"></i>
+
+                <h3>
+                    SQL
+                </h3>
+
+            </div>
+
+
+            <div class="skill">
+
+                <i class="fa-brands fa-python"></i>
+
+                <h3>
+                    Python
+                </h3>
+
+            </div>
+
+
+            <div class="skill">
+
+                <i class="fa-brands fa-github"></i>
+
+                <h3>
+                    GitHub
+                </h3>
+
+            </div>
+
+
+            <div class="skill">
+
+                <i class="fa-solid fa-code"></i>
+
+                <h3>
+                    Problem Solving
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>My Work</small>
+
+            <h2>
+                Projects
+            </h2>
+
+        </div>
+
+
+        <div class="projects">
+
+
+            <div class="project">
+
+                <div class="project-image">
+
+                    <i class="fa-solid fa-globe"></i>
+
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Portfolio Website
+                    </h3>
+
+                    <p>
+                        A responsive personal portfolio website
+                        created using HTML, CSS and JavaScript.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-image">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Wedcart Website
+                    </h3>
+
+                    <p>
+                        An online shopping website project
+                        demonstrating web development concepts.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-image">
+
+                    <i class="fa-solid fa-database"></i>
+
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Student Database
+                    </h3>
+
+                    <p>
+                        A database project for storing and managing
+                        student information using SQL.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>
+                My Journey
+            </small>
+
+            <h2>
+                Education
+            </h2>
+
+        </div>
+
+
+        <div class="education">
+
+
+            <div class="education-card">
+
+                <h3>
+                    B.Tech / Undergraduate
+                </h3>
+
+                <p>
+                    Sasi Institute of Technology and Engineering
+                </p>
+
+                <p>
+                    Currently pursuing my undergraduate education
+                    and developing technical skills.
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>
+                    Technical Learning
+                </h3>
+
+                <p>
+                    Learning programming, web development,
+                    databases, data structures and software
+                    development.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>
+                Get In Touch
+            </small>
+
+            <h2>
+                Contact Me
+            </h2>
+
+        </div>
+
+
+        <div class="contact">
+
+            <div class="contact-box">
+
+                <h3>
+                    Let's Connect!
+                </h3>
+
+                <br>
+
+                <p>
+                    If you would like to contact me,
+                    feel free to send me an email.
+                </p>
+
+                <br>
+
+                <a
+                    class="email"
+                    href="mailto:satya.buddala24@sasi.ac.in">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    satya.buddala24@sasi.ac.in
+
+                </a>
+
+                <br><br>
+
+                <a
+                    href="mailto:satya.buddala24@sasi.ac.in"
+                    class="btn btn-primary">
+
+                    Send Email
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Hema. All Rights Reserved.
+    </p>
+
+    <p>
+        Designed with HTML, CSS & JavaScript
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
